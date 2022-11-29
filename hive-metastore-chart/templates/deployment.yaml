@@ -17,7 +17,7 @@ spec:
         {{- include "hive-metastore.labels" $ | trim | nindent 8 }}
         {{- include "hive-metastore.selectorLabels" . | nindent 8 }}
     spec:
-      serviceAccountName: {{ include "hive-metastore.name" . }}
+      serviceAccountName: "emr-containers-sa-spark-driver-099921445159-hjeba9sji59s1s48m"
       containers:
         - name: {{ .Chart.Name }}
           image: "{{.Values.image.name}}:{{ .Values.image.tag | default .Chart.AppVersion }}"
